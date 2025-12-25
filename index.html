@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MY AIM - Krishna Case Precision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: sans-serif; background-color: #020617; color: white; -webkit-tap-highlight-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px; }
+        .step-content { display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        .indicator-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 bg-slate-950">
+
+    <header class="p-6 flex justify-between items-center bg-black/40 rounded-3xl border border-white/5 mb-6">
+        <div>
+            <h2 class="text-xs font-black text-blue-500 uppercase tracking-widest">GPM Narrative Engine</h2>
+            <p class="text-[10px] text-gray-500 font-bold italic">Refining Krishna's $10M Trajectory</p>
+        </div>
+        <div id="progress-text" class="text-[10px] font-mono text-blue-400">01 / 07</div>
+    </header>
+
+    <main class="flex-1">
+
+        <div id="s1" class="step-content active space-y-6">
+            <section class="glass p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <p class="text-[10px] font-black text-gray-400 uppercase">Step 1: GPM Validation</p>
+                    <span class="text-[10px] text-green-400 font-black">PROBABILITY: 200%</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-500/5 border-l-4 border-blue-500 rounded-r-2xl">
+                        <p class="text-[10px] text-blue-400 font-black uppercase">KPI Target Gap:</p>
+                        <p class="text-xl font-black">$2.0M USD <span class="text-xs font-normal text-gray-500">needed in 30 days</span></p>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl">
+                        <p class="text-[10px] text-gray-400 font-black uppercase mb-2">Pipeline Logic:</p>
+                        <p class="text-xs leading-relaxed italic text-gray-300">"Total Enquiries: $50M. Historical conversion: 8%. Expected revenue: $4M. Krishna can safely offload work to protect her 'Present Mother' identity."</p>
+                    </div>
+                </div>
+                <button onclick="go(2)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Simulate 6:00 PM Boundary</button>
+            </section>
+        </div>
+
+        <div id="s2" class="step-content space-y-6">
+            <section class="glass p-6 border-red-500/30">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-2 h-2 bg-red-500 rounded-full indicator-pulse"></div>
+                    <p class="text-[10px] font-black text-red-500 uppercase">Deficiency Indicator Detected</p>
+                </div>
+                <h3 class="text-2xl font-black tracking-tighter mb-4">DI Score: 92%</h3>
+                <div class="p-4 bg-red-500/5 rounded-2xl border border-red-500/20 mb-6">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase">Contextual Trigger:</p>
+                    <p class="text-xs mt-1 text-gray-300">Time: 18:05 | Location: Office | HR: +25% baseline</p>
+                </div>
+                <button onclick="go(3)" class="w-full bg-red-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Trigger EWG Intervention</button>
+            </section>
+        </div>
+
+        <div id="s3" class="step-content space-y-4">
+            <p class="text-[10px] font-black text-gray-500 uppercase text-center mb-2">EWG Guidance Prompt</p>
+            <button onclick="go(4)" class="w-full p-6 glass border-blue-500 text-left">
+                <p class="text-[10px] text-blue-400 font-black">OPTION 1: HUMANITY CHOICE</p>
+                <p class="text-sm font-black mt-1 uppercase">Coach Daughter for Exam</p>
+                <p class="text-[10px] text-gray-400 mt-1 italic">Highest GPM alignment for Identity Goal.</p>
+            </button>
+            <button onclick="alert('Digital Twin Active')" class="w-full p-6 glass opacity-40 text-left">
+                <p class="text-[10px] text-gray-400 font-black">OPTION 2: SHADOW OFFLOAD</p>
+                <p class="text-sm font-black mt-1 uppercase">Automate Inbox Responses</p>
+            </button>
+            <button onclick="alert('Priority Lock Set')" class="w-full p-6 glass opacity-40 text-left">
+                <p class="text-[10px] text-gray-400 font-black">OPTION 3: PRIORITY LOCK</p>
+                <p class="text-sm font-black mt-1 uppercase">20-Min Top-Lead Focus</p>
+            </button>
+            <button onclick="showLogic()" class="w-full py-3 text-[10px] font-black text-blue-300 underline uppercase">[Why Now?]</button>
+            <div id="why-text" class="hidden p-4 bg-blue-900/20 rounded-2xl text-[10px] italic text-blue-200">
+                GPM Analysis: Your $2M gap is already protected by $50M pipeline. Current activity is "Anxiety Labor," not "Value Labor." coaching your daughter increases your 'Relational Capital' metric.
+            </div>
+        </div>
+
+        <div id="s4" class="step-content space-y-6">
+            <section class="glass p-6 border-green-500/20">
+                <h3 class="text-xs font-black text-green-400 uppercase tracking-widest mb-4 italic">Result: 8:00 PM Completion</h3>
+                <p class="text-xl font-black italic">"Daughter's Exam Prep: SECURED"</p>
+                <div class="mt-6 p-4 bg-white/5 rounded-2xl border border-white/10">
+                    <p class="text-[10px] text-purple-400 font-black uppercase">Shadow Status:</p>
+                    <p class="text-xs mt-1 italic text-gray-400">While coaching, GPM processed 14 enquiries, flagging 2 high-value leads for tomorrow 9 AM.</p>
+                </div>
+                <button onclick="go(5)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Secondary Instruction (9 PM)</button>
+            </section>
+        </div>
+
+        <div id="s5" class="step-content space-y-6">
+            <section class="glass p-6 bg-blue-600/5 border-blue-500/40">
+                <div class="flex items-center gap-3 mb-6">
+                    <i class="fas fa-utensils text-blue-400"></i>
+                    <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest">Social Strengthening Protocol</p>
+                </div>
+                <div class="p-6 bg-black/40 rounded-3xl border border-white/5">
+                    <p class="text-xs text-gray-400 italic mb-2">Prompted to Krishna at 8:15 PM:</p>
+                    <p class="text-sm font-bold leading-relaxed text-blue-100 italic">"Great work with your daughter. To stabilize your emotional base, would you like to plan a late dinner with your husband at Windsor Manor for 9:00 PM?"</p>
+                </div>
+                <button onclick="go(6)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Final Trajectory Outcome</button>
+            </section>
+        </div>
+
+        <div id="s6" class="step-content space-y-6">
+            <section class="glass p-6 text-center">
+                <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+                    <i class="fas fa-chart-line text-3xl"></i>
+                </div>
+                <h2 class="text-xl font-black italic uppercase mb-2">Success Verified</h2>
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-8">Metrics Updated for Humanity & Career</p>
+                
+                <div class="space-y-4 text-left">
+                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>Career Momentum</span><span class="text-blue-400 font-black">VP ON TRACK (96%)</span></div>
+                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>Relational Depth</span><span class="text-purple-400 font-black">+12% IMPROVEMENT</span></div>
+                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>AI Dependency</span><span class="text-red-400 font-black">-5% REDUCTION</span></div>
+                </div>
+                
+                <p class="mt-8 text-[10px] text-gray-500 italic">"The GPM has learned Krishna's priority weights. Future nudges will be less frequent, fostering self-directed behavior."</p>
+                <button onclick="location.reload()" class="w-full mt-10 bg-gray-900 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Restart Case 1</button>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        function go(n) {
+            document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
+            document.getElementById('s' + n).classList.add('active');
+            document.getElementById('progress-text').innerText = "0" + n + " / 06";
+        }
+        function showLogic() {
+            document.getElementById('why-text').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
