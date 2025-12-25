@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MY AIM - Fail Safe Demo</title>
+    <title>MY AIM - Stabilized Case Study</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif; background-color: #010409; color: white; -webkit-tap-highlight-color: transparent; margin: 0; }
+        body { font-family: sans-serif; background-color: #010409; color: white; -webkit-tap-highlight-color: transparent; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; }
-        /* Reset all contents to hidden */
-        .step-content { display: none; visibility: hidden; }
-        /* Force active screen to show */
-        .step-content.active { display: block !important; visibility: visible !important; animation: fadeIn 0.5s ease-out forwards; }
+        .step-content { display: none !important; }
+        .step-content.active { display: block !important; animation: fadeIn 0.4s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .btn-aim { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
     </style>
@@ -31,66 +29,97 @@
         <div id="scr-1" class="step-content active">
             <section class="glass p-8">
                 <div class="border-l-4 border-blue-500 pl-4 py-1 mb-6">
-                    <p class="text-[10px] text-gray-500 font-black uppercase mb-1">Subject Profile</p>
-                    <h2 class="text-lg font-bold italic text-blue-100">Krishna, Marketing Manager</h2>
+                    <p class="text-[10px] text-gray-500 font-black uppercase mb-1 text-left">Subject Profile</p>
+                    <h2 class="text-lg font-bold italic text-blue-100 text-left">Krishna, Marketing Manager</h2>
                 </div>
-                
                 <div class="space-y-4 bg-white/5 p-5 rounded-2xl border border-white/5">
-                    <p class="text-[11px] leading-relaxed"><span class="text-blue-400 font-black uppercase text-[9px]">GPM Identity:</span><br>"Present Mother and Decisive Leader."</p>
-                    <p class="text-[11px] leading-relaxed"><span class="text-blue-400 font-black uppercase text-[9px]">Target:</span><br>VP Promotion via $10M USD Booking.</p>
-                    <p class="text-[11px] leading-relaxed"><span class="text-blue-400 font-black uppercase text-[9px]">Requirement:</span><br>Full Work-Life Balance.</p>
+                    <p class="text-[11px] leading-relaxed text-left"><span class="text-blue-400 font-black uppercase text-[9px]">GPM Identity:</span><br>"Present Mother and Decisive Leader."</p>
+                    <p class="text-[11px] leading-relaxed text-left"><span class="text-blue-400 font-black uppercase text-[9px]">Target:</span><br>VP Promotion via $10M USD Booking.</p>
+                    <p class="text-[11px] leading-relaxed text-left"><span class="text-blue-400 font-black uppercase text-[9px]">Requirement:</span><br>Full Work-Life Balance.</p>
                 </div>
-
                 <div class="pt-10">
-                    <button onclick="nav(2)" class="btn-aim w-full py-5 rounded-2xl font-black uppercase text-sm tracking-widest shadow-xl">
-                        Initialize MY AIM
-                    </button>
-                    <p class="mt-4 text-[9px] text-gray-600 font-bold uppercase tracking-widest text-center">Tap to engage GPM Ingestion Engine</p>
+                    <button onclick="nav(2)" class="btn-aim w-full py-5 rounded-2xl font-black uppercase text-sm tracking-widest shadow-xl">Initialize MY AIM</button>
+                    <p class="mt-4 text-[9px] text-gray-600 font-bold uppercase tracking-widest text-center">Engage GPM Ingestion Engine</p>
                 </div>
             </section>
         </div>
 
         <div id="scr-2" class="step-content">
             <section class="glass p-6">
-                <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4">GPM Data Synthesis</p>
+                <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4">01 / 07: GPM Data Synthesis</p>
                 <div class="p-6 bg-white/5 rounded-2xl border border-white/5 text-center">
-                    <p class="text-3xl font-black">$10.0M</p>
+                    <p class="text-3xl font-black italic">$10.0M</p>
                     <div class="w-full bg-gray-800 h-2 rounded-full mt-4 overflow-hidden">
                         <div class="bg-blue-500 h-full" style="width: 80%"></div>
                     </div>
                     <p class="text-[10px] mt-2 text-blue-400 font-bold">$8M Achieved</p>
                 </div>
-                <button onclick="nav(3)" class="w-full mt-10 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Verify GPM Logic</button>
+                <div class="p-4 mt-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 text-xs italic text-blue-100">
+                    "Pipeline value is 2x the remaining target. Relational Health can be prioritized."
+                </div>
+                <button onclick="nav(3)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Verify GPM Logic</button>
             </section>
         </div>
 
-        <div id="scr-3" class="step-content p-10 text-center"><p class="text-red-500 font-black">Screen 3: Boundary Detection</p><button onclick="nav(4)" class="mt-4 underline text-xs">Next</button></div>
-        <div id="scr-4" class="step-content p-10 text-center"><p class="text-blue-400 font-black">Screen 4: EWG Intervention</p><button onclick="nav(5)" class="mt-4 underline text-xs">Next</button></div>
-        <div id="scr-5" class="step-content p-10 text-center"><p class="text-purple-400 font-black">Screen 5: Shadow Mode</p><button onclick="nav(6)" class="mt-4 underline text-xs">Next</button></div>
-        <div id="scr-6" class="step-content p-10 text-center"><p class="text-blue-300 font-black">Screen 6: Social Catalyst</p><button onclick="nav(7)" class="mt-4 underline text-xs">Next</button></div>
-        <div id="scr-7" class="step-content p-10 text-center"><p class="text-green-400 font-black">Screen 7: Mission Success</p><button onclick="location.reload()" class="mt-4 underline text-xs">Restart</button></div>
+        <div id="scr-3" class="step-content">
+            <section class="glass p-6 border-red-500/30">
+                <p class="text-[10px] font-black text-red-500 uppercase tracking-widest mb-4">02 / 07: Boundary Detection</p>
+                <h3 class="text-2xl font-black">DI Score: 92%</h3>
+                <p class="text-xs text-gray-400 mt-2 italic">6:00 PM Trigger: Identity conflict detected.</p>
+                <button onclick="nav(4)" class="w-full mt-10 bg-red-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Trigger Intervention</button>
+            </section>
+        </div>
+
+        <div id="scr-4" class="step-content">
+            <section class="glass p-6">
+                <p class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-4">03 / 07: EWG Choice</p>
+                <button onclick="nav(5)" class="w-full p-6 bg-white/5 rounded-2xl border border-blue-500/50 text-left mb-4">
+                    <p class="text-xs font-black uppercase text-blue-400">Option 1: Coach Daughter</p>
+                </button>
+                <div class="opacity-30 p-6 bg-white/5 rounded-2xl border border-white/10 mb-4 text-left text-xs uppercase font-bold">Option 2: Shadow Offload</div>
+                <button onclick="nav(5)" class="w-full py-4 text-[10px] font-black text-blue-400 underline uppercase tracking-widest">Simulate Selection</button>
+            </section>
+        </div>
+
+        <div id="scr-5" class="step-content">
+            <section class="glass p-6 border-purple-500/30">
+                <p class="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-4">04 / 07: Shadow Agent</p>
+                <p class="text-sm italic text-gray-300">Processing 14 background enquiries while Krishna is "Present Mother."</p>
+                <button onclick="nav(6)" class="w-full mt-10 bg-purple-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">View Social Catalyst</button>
+            </section>
+        </div>
+
+        <div id="scr-6" class="step-content">
+            <section class="glass p-6 text-center">
+                <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4">05 / 07: Social Strength</p>
+                <p class="text-sm italic text-blue-100 mb-6">"Celebration dinner suggested at Windsor Manor at 9:00 PM."</p>
+                <button onclick="nav(7)" class="w-full mt-6 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Final Metrics</button>
+            </section>
+        </div>
+
+        <div id="scr-7" class="step-content">
+            <section class="glass p-8 text-center">
+                <h3 class="text-xl font-black italic mb-6">MISSION SUCCESS</h3>
+                <div class="space-y-2 text-left text-[11px]">
+                    <div class="flex justify-between border-b border-white/5 py-2"><span>Career</span><span class="text-blue-400 font-black">96%</span></div>
+                    <div class="flex justify-between border-b border-white/5 py-2"><span>Relational</span><span class="text-green-400 font-black">+12%</span></div>
+                </div>
+                <button onclick="location.reload()" class="w-full mt-10 bg-gray-800 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Restart Demo</button>
+            </section>
+        </div>
 
     </main>
 
     <script>
         function nav(n) {
-            // Hide all by removing active class
             var screens = document.getElementsByClassName('step-content');
-            for(var i = 0; i < screens.length; i++) {
-                screens[i].classList.remove('active');
-            }
-            // Show the target screen
-            var target = document.getElementById('scr-' + n);
-            target.classList.add('active');
-            
-            // Manage Progress Header
+            for(var i = 0; i < screens.length; i++) { screens[i].classList.remove('active'); }
+            document.getElementById('scr-' + n).classList.add('active');
             var wrap = document.getElementById('prog-wrap');
             if(n > 1) {
                 wrap.style.display = 'block';
                 document.getElementById('step-label').innerText = "0" + (n-1) + " / 07";
-            } else {
-                wrap.style.display = 'none';
-            }
+            } else { wrap.style.display = 'none'; }
         }
     </script>
 </body>
