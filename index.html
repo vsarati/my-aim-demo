@@ -3,142 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MY AIM - Krishna Case Precision</title>
+    <title>MY AIM - Full Case Study Flow</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif; background-color: #020617; color: white; -webkit-tap-highlight-color: transparent; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px; }
+        body { font-family: sans-serif; background-color: #010409; color: white; -webkit-tap-highlight-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 32px; }
         .step-content { display: none; }
-        .step-content.active { display: block; animation: fadeIn 0.5s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        .active { display: block !important; animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-aim { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .indicator-pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     </style>
 </head>
 <body class="min-h-screen flex flex-col p-4 bg-slate-950">
 
-    <header class="p-6 flex justify-between items-center bg-black/40 rounded-3xl border border-white/5 mb-6">
+    <header class="p-5 mb-6 flex justify-between items-center bg-black/40 rounded-3xl border border-white/5">
         <div>
-            <h2 class="text-xs font-black text-blue-500 uppercase tracking-widest">GPM Narrative Engine</h2>
-            <p class="text-[10px] text-gray-500 font-bold italic">Refining Krishna's $10M Trajectory</p>
+            <h1 class="text-xl font-black italic tracking-tighter">MY AIM</h1>
+            <p class="text-[9px] text-blue-400 font-black uppercase tracking-widest">Krishna's GPM Journey</p>
         </div>
-        <div id="progress-text" class="text-[10px] font-mono text-blue-400">01 / 07</div>
+        <div id="prog-wrap" class="hidden">
+            <span id="step-label" class="text-[10px] text-blue-400 font-mono font-bold tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">01 / 07</span>
+        </div>
     </header>
 
     <main class="flex-1">
 
-        <div id="s1" class="step-content active space-y-6">
-            <section class="glass p-6">
-                <div class="flex justify-between items-start mb-6">
-                    <p class="text-[10px] font-black text-gray-400 uppercase">Step 1: GPM Validation</p>
-                    <span class="text-[10px] text-green-400 font-black">PROBABILITY: 200%</span>
+        <div id="scr-1" class="step-content active space-y-6">
+            <section class="glass p-8 border-blue-500/20">
+                <div class="border-l-2 border-blue-500 pl-4 py-1 mb-6">
+                    <p class="text-[10px] text-gray-500 font-black uppercase mb-1">Subject Profile</p>
+                    <h2 class="text-lg font-bold italic text-blue-100">Krishna, Marketing Manager</h2>
                 </div>
-                <div class="space-y-4">
-                    <div class="p-4 bg-blue-500/5 border-l-4 border-blue-500 rounded-r-2xl">
-                        <p class="text-[10px] text-blue-400 font-black uppercase">KPI Target Gap:</p>
-                        <p class="text-xl font-black">$2.0M USD <span class="text-xs font-normal text-gray-500">needed in 30 days</span></p>
+                <div class="bg-white/5 rounded-2xl p-6 space-y-5 border border-white/5">
+                    <div class="flex gap-4">
+                        <i class="fas fa-fingerprint text-blue-500 text-sm mt-1"></i>
+                        <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">GPM Identity:</span><br>"Present Mother and Decisive Leader."</p>
                     </div>
-                    <div class="p-4 bg-white/5 rounded-2xl">
-                        <p class="text-[10px] text-gray-400 font-black uppercase mb-2">Pipeline Logic:</p>
-                        <p class="text-xs leading-relaxed italic text-gray-300">"Total Enquiries: $50M. Historical conversion: 8%. Expected revenue: $4M. Krishna can safely offload work to protect her 'Present Mother' identity."</p>
+                    <div class="flex gap-4">
+                        <i class="fas fa-chart-line text-blue-500 text-sm mt-1"></i>
+                        <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">Career Ambition:</span><br>VP Promotion via <span class="font-bold text-white">$10M USD</span> target.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fas fa-balance-scale text-blue-500 text-sm mt-1"></i>
+                        <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">Core Demand:</span><br>Work-Life Balance without sacrifice.</p>
                     </div>
                 </div>
-                <button onclick="go(2)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Simulate 6:00 PM Boundary</button>
+                <div class="pt-8">
+                    <button onclick="nav(2)" class="btn-aim w-full py-5 rounded-2xl font-black uppercase text-sm tracking-[0.2em]">Initialize MY AIM</button>
+                    <p class="mt-4 text-[9px] text-gray-600 font-bold uppercase tracking-widest text-center">Tap to engage GPM Ingestion</p>
+                </div>
             </section>
         </div>
 
-        <div id="s2" class="step-content space-y-6">
+        <div id="scr-2" class="step-content space-y-6">
+            <section class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xs font-black text-blue-400 uppercase italic">GPM Data Synthesis</h3>
+                    <span class="text-[8px] bg-green-500/10 text-green-400 border px-2 py-1 rounded-full font-bold">FEASIBILITY: SECURED</span>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/5 mb-6 text-center">
+                    <p class="text-[10px] text-gray-500 font-bold uppercase mb-2 tracking-widest">Order Booking Goal</p>
+                    <p class="text-3xl font-black italic">$10.0M</p>
+                    <div class="w-full bg-gray-800 h-2 rounded-full mt-4 overflow-hidden">
+                        <div class="bg-blue-500 h-full" style="width: 80%"></div>
+                    </div>
+                    <p class="text-[10px] mt-2 text-blue-400 font-bold">$8M Achieved (80%)</p>
+                </div>
+                <div class="p-4 bg-blue-500/10 rounded-2xl border border-blue-500/20 text-xs italic text-blue-100 leading-relaxed">
+                    "GPM Analysis: Existing pipeline ($50M) with 8% conversion confirms $4M expected. Career safety is high."
+                </div>
+                <button onclick="nav(3)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Verify GPM Logic</button>
+            </section>
+        </div>
+
+        <div id="scr-3" class="step-content space-y-6">
             <section class="glass p-6 border-red-500/30">
                 <div class="flex items-center gap-2 mb-4">
                     <div class="w-2 h-2 bg-red-500 rounded-full indicator-pulse"></div>
-                    <p class="text-[10px] font-black text-red-500 uppercase">Deficiency Indicator Detected</p>
+                    <p class="text-[10px] font-black text-red-500 uppercase tracking-widest">Boundary Collapse Alert</p>
                 </div>
-                <h3 class="text-2xl font-black tracking-tighter mb-4">DI Score: 92%</h3>
-                <div class="p-4 bg-red-500/5 rounded-2xl border border-red-500/20 mb-6">
-                    <p class="text-[10px] font-bold text-gray-400 uppercase">Contextual Trigger:</p>
-                    <p class="text-xs mt-1 text-gray-300">Time: 18:05 | Location: Office | HR: +25% baseline</p>
-                </div>
-                <button onclick="go(3)" class="w-full bg-red-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Trigger EWG Intervention</button>
+                <h3 class="text-3xl font-black">DI Score: 92%</h3>
+                <p class="text-xs text-gray-400 mt-2 leading-relaxed italic">Trigger: 6:00 PM Arrival + Workplace Stress detected. Identity conflict imminent.</p>
+                <button onclick="nav(4)" class="w-full mt-10 bg-red-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Trigger EWG Intervention</button>
             </section>
         </div>
 
-        <div id="s3" class="step-content space-y-4">
-            <p class="text-[10px] font-black text-gray-500 uppercase text-center mb-2">EWG Guidance Prompt</p>
-            <button onclick="go(4)" class="w-full p-6 glass border-blue-500 text-left">
-                <p class="text-[10px] text-blue-400 font-black">OPTION 1: HUMANITY CHOICE</p>
-                <p class="text-sm font-black mt-1 uppercase">Coach Daughter for Exam</p>
-                <p class="text-[10px] text-gray-400 mt-1 italic">Highest GPM alignment for Identity Goal.</p>
+        <div id="scr-4" class="step-content space-y-4">
+            <p class="text-[10px] font-black text-center text-gray-500 uppercase tracking-widest">Proactive Nudge Engine</p>
+            <button onclick="nav(5)" class="w-full p-6 glass border-blue-500/50 text-left active:scale-95 transition-transform">
+                <p class="text-xs font-black uppercase text-blue-400">OPTION 1: Coach Daughter (Recommended)</p>
+                <p class="text-[10px] text-gray-400 mt-2 italic">Optimizes GPM Relational Metric for motherhood goal.</p>
             </button>
-            <button onclick="alert('Digital Twin Active')" class="w-full p-6 glass opacity-40 text-left">
-                <p class="text-[10px] text-gray-400 font-black">OPTION 2: SHADOW OFFLOAD</p>
-                <p class="text-sm font-black mt-1 uppercase">Automate Inbox Responses</p>
+            <button class="w-full p-6 glass opacity-30 text-left">
+                <p class="text-xs font-bold uppercase">OPTION 2: Shadow Offload</p>
             </button>
-            <button onclick="alert('Priority Lock Set')" class="w-full p-6 glass opacity-40 text-left">
-                <p class="text-[10px] text-gray-400 font-black">OPTION 3: PRIORITY LOCK</p>
-                <p class="text-sm font-black mt-1 uppercase">20-Min Top-Lead Focus</p>
+            <button class="w-full p-6 glass opacity-30 text-left">
+                <p class="text-xs font-bold uppercase">OPTION 3: 20-Min Lead Sync</p>
             </button>
-            <button onclick="showLogic()" class="w-full py-3 text-[10px] font-black text-blue-300 underline uppercase">[Why Now?]</button>
-            <div id="why-text" class="hidden p-4 bg-blue-900/20 rounded-2xl text-[10px] italic text-blue-200">
-                GPM Analysis: Your $2M gap is already protected by $50M pipeline. Current activity is "Anxiety Labor," not "Value Labor." coaching your daughter increases your 'Relational Capital' metric.
-            </div>
         </div>
 
-        <div id="s4" class="step-content space-y-6">
-            <section class="glass p-6 border-green-500/20">
-                <h3 class="text-xs font-black text-green-400 uppercase tracking-widest mb-4 italic">Result: 8:00 PM Completion</h3>
-                <p class="text-xl font-black italic">"Daughter's Exam Prep: SECURED"</p>
-                <div class="mt-6 p-4 bg-white/5 rounded-2xl border border-white/10">
-                    <p class="text-[10px] text-purple-400 font-black uppercase">Shadow Status:</p>
-                    <p class="text-xs mt-1 italic text-gray-400">While coaching, GPM processed 14 enquiries, flagging 2 high-value leads for tomorrow 9 AM.</p>
-                </div>
-                <button onclick="go(5)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Secondary Instruction (9 PM)</button>
-            </section>
-        </div>
-
-        <div id="s5" class="step-content space-y-6">
-            <section class="glass p-6 bg-blue-600/5 border-blue-500/40">
+        <div id="scr-5" class="step-content space-y-6">
+            <section class="glass p-6 border-purple-500/30">
                 <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-utensils text-blue-400"></i>
-                    <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest">Social Strengthening Protocol</p>
+                    <i class="fas fa-user-shield text-purple-400"></i>
+                    <p class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Shadow Agent Active</p>
                 </div>
-                <div class="p-6 bg-black/40 rounded-3xl border border-white/5">
-                    <p class="text-xs text-gray-400 italic mb-2">Prompted to Krishna at 8:15 PM:</p>
-                    <p class="text-sm font-bold leading-relaxed text-blue-100 italic">"Great work with your daughter. To stabilize your emotional base, would you like to plan a late dinner with your husband at Windsor Manor for 9:00 PM?"</p>
+                <p class="text-sm italic text-gray-300 leading-relaxed">Krishna is currently "Present Mother." Shadow Agent is processing 14 background enquiries to protect her career track.</p>
+                <div class="bg-purple-500/10 p-4 rounded-xl border border-purple-500/20 mt-4">
+                    <p class="text-[9px] text-purple-300 font-bold uppercase tracking-widest">Background Status:</p>
+                    <p class="text-[10px] mt-1 text-gray-400">2 High-Value Leads Flagged for 9:00 AM.</p>
                 </div>
-                <button onclick="go(6)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Final Trajectory Outcome</button>
+                <button onclick="nav(6)" class="w-full mt-8 bg-purple-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Next Phase</button>
             </section>
         </div>
 
-        <div id="s6" class="step-content space-y-6">
-            <section class="glass p-6 text-center">
-                <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
-                    <i class="fas fa-chart-line text-3xl"></i>
+        <div id="scr-6" class="step-content space-y-6">
+            <section class="glass p-6 border-blue-500/30 text-center">
+                <div class="mb-4"><i class="fas fa-utensils text-2xl text-blue-400"></i></div>
+                <p class="text-xs text-blue-400 font-bold uppercase mb-2">Social Strengthening</p>
+                <p class="text-sm italic leading-relaxed text-blue-100">"Excellent focus today. GPM suggests a celebration dinner with your husband at Windsor Manor at 9:00 PM."</p>
+                <button onclick="nav(7)" class="w-full mt-8 bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Final Outcome</button>
+            </section>
+        </div>
+
+        <div id="scr-7" class="step-content space-y-8 text-center">
+            <section class="glass p-8">
+                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+                    <i class="fas fa-check text-2xl"></i>
                 </div>
-                <h2 class="text-xl font-black italic uppercase mb-2">Success Verified</h2>
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-8">Metrics Updated for Humanity & Career</p>
-                
-                <div class="space-y-4 text-left">
-                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>Career Momentum</span><span class="text-blue-400 font-black">VP ON TRACK (96%)</span></div>
-                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>Relational Depth</span><span class="text-purple-400 font-black">+12% IMPROVEMENT</span></div>
-                    <div class="flex justify-between items-center text-[11px] p-3 bg-white/5 rounded-xl"><span>AI Dependency</span><span class="text-red-400 font-black">-5% REDUCTION</span></div>
+                <h3 class="text-xl font-black italic mb-2">MISSION SUCCESS</h3>
+                <p class="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-8">Identity & Career Synchronized</p>
+                <div class="space-y-3 text-left">
+                    <div class="flex justify-between text-[11px] p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="text-gray-400">Career Momentum</span><span class="text-blue-400 font-black">96%</span>
+                    </div>
+                    <div class="flex justify-between text-[11px] p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="text-gray-400">Relational Capital</span><span class="text-green-400 font-black">+12%</span>
+                    </div>
+                    <div class="flex justify-between text-[11px] p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="text-gray-400">AI Dependency</span><span class="text-red-400 font-black">-5%</span>
+                    </div>
                 </div>
-                
-                <p class="mt-8 text-[10px] text-gray-500 italic">"The GPM has learned Krishna's priority weights. Future nudges will be less frequent, fostering self-directed behavior."</p>
-                <button onclick="location.reload()" class="w-full mt-10 bg-gray-900 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Restart Case 1</button>
+                <button onclick="location.reload()" class="w-full mt-10 bg-gray-800 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Restart Case 1</button>
             </section>
         </div>
 
     </main>
 
     <script>
-        function go(n) {
+        function nav(n) {
             document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            document.getElementById('s' + n).classList.add('active');
-            document.getElementById('progress-text').innerText = "0" + n + " / 06";
-        }
-        function showLogic() {
-            document.getElementById('why-text').classList.toggle('hidden');
+            document.getElementById('scr-' + n).classList.add('active');
+            document.getElementById('prog-wrap').classList.remove('hidden');
+            document.getElementById('step-label').innerText = "0" + (n-1) + " / 07";
+            if(n===1) document.getElementById('prog-wrap').classList.add('hidden');
         }
     </script>
 </body>
