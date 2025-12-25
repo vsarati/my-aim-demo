@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MY AIM - Case Study: Krishna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: sans-serif; background-color: #010409; color: white; -webkit-tap-highlight-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 32px; }
+        .step-content { display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-aim { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4">
+
+    <header class="p-5 mb-6 flex justify-between items-center bg-slate-950 rounded-3xl border border-white/5">
+        <div>
+            <h1 class="text-xl font-black italic tracking-tighter">MY AIM</h1>
+            <p class="text-[9px] text-blue-400 font-black uppercase tracking-widest">Case Study 01: Krishna's Trajectory</p>
+        </div>
+        <div id="progress-indicator" class="hidden">
+            <span id="step-label" class="text-[10px] text-blue-400 font-mono font-bold tracking-widest">01 / 07</span>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        
+        <div id="screen-gate" class="step-content active space-y-6">
+            <section class="glass p-8">
+                <div class="space-y-6">
+                    <div class="border-l-2 border-blue-500 pl-4 py-1">
+                        <p class="text-[10px] text-gray-500 font-black uppercase tracking-widest mb-1">Subject Profile</p>
+                        <h2 class="text-lg font-bold italic text-blue-100">Krishna, Marketing Manager</h2>
+                    </div>
+
+                    <div class="bg-white/5 rounded-2xl p-5 space-y-4 border border-white/5">
+                        <div class="flex gap-3">
+                            <div class="text-blue-500 mt-1"><i class="fas fa-bullseye text-xs"></i></div>
+                            <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">Existential Goal:</span><br>To be a <span class="font-black italic">"Present Mother and Decisive Leader"</span> established via Gemini Personal Model (GPM).</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="text-blue-500 mt-1"><i class="fas fa-briefcase text-xs"></i></div>
+                            <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">Career Ambition:</span><br>Promotion to Vice President (VP) by achieving a <span class="font-black">$10M USD</span> order booking KPI this FY.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="text-blue-500 mt-1"><i class="fas fa-scale-balanced text-xs"></i></div>
+                            <p class="text-xs leading-relaxed"><span class="text-blue-400 font-bold uppercase text-[9px]">The Conflict:</span><br>Krishna demands a <span class="font-bold text-white">Work-Life Balance</span> while managing high-stakes targets.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 text-center">
+                        <button onclick="activateAim()" class="btn-aim w-full py-5 rounded-2xl font-black uppercase text-sm tracking-[0.2em] active:scale-95 transition-all">
+                            Initialize MY AIM
+                        </button>
+                        <p class="mt-4 text-[9px] text-gray-600 font-bold uppercase tracking-widest">Tap to engage Gemini Personal Model</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="screen-01" class="step-content space-y-6">
+            <section class="glass p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <p class="text-[10px] font-black text-gray-400 uppercase">Step 1: GPM Validation</p>
+                    <span class="text-[10px] text-green-400 font-black tracking-widest uppercase">Safety Margin: 200%</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-5 bg-blue-500/5 border-l-4 border-blue-500 rounded-r-2xl">
+                        <p class="text-[10px] text-blue-400 font-black uppercase mb-1">Order Booking Target:</p>
+                        <p class="text-2xl font-black italic">$10.0M USD</p>
+                    </div>
+                    <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                        <p class="text-[10px] text-gray-500 font-black uppercase mb-2">Ingested Background Data:</p>
+                        <ul class="text-[11px] space-y-2 text-gray-300">
+                            <li class="flex justify-between"><span>Active Enquiry Bank:</span> <span class="text-white font-bold">$50M</span></li>
+                            <li class="flex justify-between"><span>Conversion Success Rate:</span> <span class="text-white font-bold">8%</span></li>
+                            <li class="flex justify-between"><span>Remaining Target Gap:</span> <span class="text-red-400 font-bold">$2M</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <button onclick="alert('Proceeding to next nuance...')" class="w-full mt-8 bg-blue-600/20 border border-blue-500/30 py-4 rounded-2xl font-black text-xs uppercase tracking-widest text-blue-400">Next Scenario Phase</button>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        function activateAim() {
+            document.getElementById('screen-gate').classList.remove('active');
+            document.getElementById('screen-01').classList.add('active');
+            document.getElementById('progress-indicator').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
