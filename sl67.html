@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MY AIM - Sl.no 67 Baseline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: sans-serif; background-color: #010409; color: white; -webkit-tap-highlight-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; }
+        .step-content { display: none !important; }
+        .step-content.active { display: block !important; animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-aim { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 bg-slate-950">
+
+    <header class="p-5 mb-6 flex justify-between items-center bg-black/40 rounded-3xl border border-white/5 text-left">
+        <div>
+            <h1 class="text-xl font-black italic tracking-tighter">MY AIM</h1>
+            <p class="text-[9px] text-blue-400 font-black uppercase tracking-widest">Gemini Project</p>
+        </div>
+        <div class="px-4 py-2 bg-white/5 rounded-full border border-white/10">
+            <span id="step-label" class="text-[10px] text-blue-400 font-mono font-bold tracking-widest">1 / 07</span>
+        </div>
+    </header>
+
+    <main class="flex-1">
+
+        <div id="scr-1" class="step-content active">
+            <section class="glass p-8 border-blue-500/20 text-left">
+                <div class="mb-8">
+                    <p class="text-[10px] text-gray-500 font-black uppercase mb-2">Subject Profile</p>
+                    <h2 class="text-2xl font-bold italic text-white mb-1">Krishna</h2>
+                    <p class="text-xs text-blue-400 font-bold uppercase tracking-widest">Marketing Manager</p>
+                </div>
+                
+                <div class="bg-white/5 rounded-2xl p-6 space-y-4 border border-white/5 mb-8">
+                    <div class="flex gap-3">
+                        <i class="fas fa-fingerprint text-blue-500 mt-1"></i>
+                        <div>
+                            <p class="text-[9px] text-gray-400 uppercase font-bold">GPM Identity</p>
+                            <p class="text-xs italic text-gray-200">"Present Mother & Decisive Leader"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="nav(2)" class="btn-aim w-full py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-xl">Initialize GPM</button>
+            </section>
+        </div>
+
+        <div id="scr-2" class="step-content">
+            <section class="glass p-6 text-left">
+                <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4">01 / 07: Logic Verification</p>
+                <div class="p-8 bg-white/5 rounded-2xl border border-white/5 text-center mb-8">
+                    <p class="text-[10px] text-gray-500 uppercase font-bold mb-2">Total Order Booking Goal</p>
+                    <p class="text-4xl font-black italic text-white">$10.0M</p>
+                    <div class="w-full bg-gray-800 h-2 rounded-full mt-6 overflow-hidden"><div class="bg-blue-500 h-full" style="width: 80%"></div></div>
+                </div>
+                <button onclick="nav(3)" class="w-full bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Verify Logic</button>
+            </section>
+        </div>
+
+        <div id="scr-3" class="step-content">
+            <section class="glass p-6 border-red-500/30 text-left">
+                <p class="text-[10px] font-black text-red-500 uppercase tracking-widest mb-4">02 / 07: Boundary Warning</p>
+                <div class="bg-red-500/5 p-6 rounded-2xl border border-red-500/20 mb-8 text-center">
+                    <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Departure Intensity (DI)</p>
+                    <h3 class="text-4xl font-black text-red-500">92%</h3>
+                </div>
+                <button onclick="nav(4)" class="w-full bg-red-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Trigger Intervention</button>
+            </section>
+        </div>
+
+        <div id="scr-4" class="step-content">
+            <section class="glass p-6 text-left">
+                <p class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">03 / 07: Early Warning Guide</p>
+                <div class="space-y-4">
+                    <button onclick="nav(5)" class="w-full p-5 glass border-blue-500/40 text-xs font-bold uppercase text-blue-400 text-left">
+                        <i class="fas fa-child mr-2"></i> Coach Daughter
+                    </button>
+                    <button onclick="nav(5)" class="w-full p-5 glass border-white/10 text-xs font-bold uppercase text-gray-500 text-left">
+                        <i class="fas fa-utensils mr-2"></i> Client Dinner
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <div id="scr-5" class="step-content">
+            <section class="glass p-6 border-purple-500/30 text-left">
+                <p class="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-4">04 / 07: Shadow Mode</p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3"><i class="fas fa-circle-notch fa-spin text-purple-500"></i><p class="text-xs text-gray-300">Processing Market Data...</p></div>
+                </div>
+                <button onclick="nav(6)" class="w-full bg-purple-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Next Phase</button>
+            </section>
+        </div>
+
+        <div id="scr-6" class="step-content">
+            <section class="glass p-6 text-left">
+                <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4">05 / 07: Social Catalyst</p>
+                <div class="p-6 bg-white/5 rounded-2xl mb-8"><p class="text-xs text-gray-300">Optimizing Windsor Manor Interaction...</p></div>
+                <button onclick="nav(7)" class="w-full bg-blue-600 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Final Metrics</button>
+            </section>
+        </div>
+
+        <div id="scr-7" class="step-content">
+            <section class="glass p-8 text-center">
+                <i class="fas fa-check-circle text-4xl text-green-500 mb-4"></i>
+                <h3 class="text-2xl font-black italic uppercase text-white mb-8">Mission Success</h3>
+                <button onclick="location.reload()" class="w-full glass py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Restart</button>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7;
+
+        function nav(n) {
+            currentStep = n;
+            updateUI();
+        }
+
+        function navNext() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+            }
+        }
+
+        function navPrev() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        function updateUI() {
+            var screens = document.getElementsByClassName('step-content');
+            for(var i = 0; i < screens.length; i++) {
+                screens[i].classList.remove('active');
+            }
+            document.getElementById('scr-' + currentStep).classList.add('active');
+            document.getElementById('step-label').innerText = currentStep + " / 07";
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
